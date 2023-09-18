@@ -1,0 +1,20 @@
+<!-- index.wxml -->
+<view class="container" data-theme="{{theme}}">
+  <mp-navigation-bar title="Atomify" ext-class="navbar" back="{{false}}" animated show="{{true}}" >
+    <view class="" slot="left">
+      <button class="btn btn-sm btn-text btn-primary" bind:tap="handleThemeChange">
+        <text class="{{theme==='light'?'icon-[ri--moon-line]':'icon-[ri--sun-line]'}}"></text>
+      </button>
+    </view>
+  </mp-navigation-bar>
+  <view class="[--bg:#f00] p-6 bg-primary text-primary text-[1em]">ddddd</view>
+  <box class="text-primary">box text</box>
+  <button class="btn"  hover-class="btn-hover" bind:tap="showModal">
+    按钮文本
+  </button>
+  <view class="time h-[4000px]">XXXXXXX</view>
+  <mp-dialog ext-class="popup" title="ri" show="{{showRoot}}">
+    sfdfdsdf
+  </mp-dialog>
+</view>
+

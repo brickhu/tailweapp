@@ -1,0 +1,6 @@
+button{
+  @apply p-0 rounded-none border-none;
+  &::after{
+    @apply p-0 rounded-none border-none;
+  }
+}

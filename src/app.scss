@@ -1,0 +1,28 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+
+$padding: 0rpx;
+
+page{
+  height: auto;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @apply bg-s0;
+}
+
+
+*, ::before, ::after {
+  box-sizing: content-box;
+  border-style: none;
+  border-color: transparent;
+}

@@ -1,0 +1,16 @@
+
+@import url('navbar.css');
+@import url('button.css');
+@import url('popup.css');
+
+.time{
+  @apply text-primary-ink bg-primary border-primary-ink text-5xl;
+  &-sm{
+    @apply text-6xl;
+  }
+  &-lg{
+    @apply text-7xl;
+  }
+}
+
+
