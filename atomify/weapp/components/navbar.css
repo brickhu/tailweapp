@@ -1,0 +1,27 @@
+view.navbar{
+  --height: 88rpx;
+  box-sizing:unset !important;
+  &{
+    --bg: theme(colors.s1);
+    --text: theme(colors.ink);
+  }
+  &-transparent{
+    --bg:transparent;
+    --text: theme(colors.ink)
+  }
+  &-primary{
+    --bg: theme(colors.primary.DEFAULT);
+    --text: theme(colors.primary.ink)
+  }
+  &-neutral{
+    --bg: theme(colors.neutral.DEFAULT);
+    --text: theme(colors.neutral.ink)
+  }
+  .weui-navigation-bar__inner{
+    @apply bg-[--bg] text-[--text];
+    box-sizing: unset;
+    .weui-navigation-bar__center{
+      @apply flex-1 font-medium;
+    }
+  }
+}

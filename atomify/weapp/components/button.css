@@ -1,0 +1,121 @@
+.btn{
+  @apply leading-none flex justify-center items-center font-bold box-border gap-[--gp,0.8em] text-[--c] bg-[--bg] m-0;
+  border-radius: var(--r,var(--round-btn,0.5rem));
+  border: var(--bd);
+  &::before{
+    @apply border-none;
+  };
+  &::after{
+    @apply border-none;
+  };
+  &:hover,&-hover{
+    @apply bg-[--f-bg] text-[--f-c];
+  }
+  &,&-md{
+    @apply text-base px-[1.4rem] h-12 py-0;
+  };
+  &-sm{
+    @apply text-sm px-[0.8rem] h-10 py-0;
+  };
+  &-lg{
+    @apply text-lg px-[1.8rem] h-14 py-0;
+  };
+  &-xl{
+    @apply text-xl px-[2.6rem] h-16 py-0;
+  };
+  &{
+    --v: theme(colors.s2);
+    --v-ink: theme(colors.ink);
+    --v-fc: theme(colors.s3);
+    &.btn-outline{
+      --v: theme(colors.ink)
+    }
+  }
+  &-neutral{
+    --v: theme(colors.neutral.DEFAULT);
+    --v-ink: theme(colors.neutral.ink);
+    --v-fc: theme(colors.neutral.focus);
+    &.btn-outline{
+      --v: theme(colors.neutral.DEFAULT)
+    }
+  };
+  &-primary{
+    --v: theme(colors.primary.DEFAULT);
+    --v-ink: theme(colors.primary.ink);
+    --v-fc: theme(colors.primary.focus);
+    &.btn-outline{
+      --v: theme(colors.primary.DEFAULT)
+    }
+  };
+  &-secondary{
+    --v: theme(colors.secondary.DEFAULT);
+    --v-ink: theme(colors.secondary.ink);
+    --v-fc: theme(colors.secondary.focus);
+    &.btn-outline{
+      --v: theme(colors.secondary.DEFAULT)
+    }
+  };
+  &-error{
+    --v: theme(colors.error.DEFAULT);
+    --v-ink: theme(colors.error.ink);
+    --v-fc: theme(colors.error.focus);
+    &.btn-outline{
+      --v: theme(colors.error.DEFAULT)
+    }
+  };
+  &-info{
+    --v: theme(colors.info.DEFAULT);
+    --v-ink: theme(colors.info.ink);
+    --v-fc: theme(colors.info.focus);
+    &.btn-outline{
+      --v: theme(colors.info.DEFAULT)
+    }
+  };
+  &-warning{
+    --v: theme(colors.warning.DEFAULT);
+    --v-ink: theme(colors.warning.ink);
+    --v-fc: theme(colors.warning.focus);
+    &.btn-outline{
+      --v: theme(colors.warning.DEFAULT)
+    }
+  };
+  &,&-fill{
+    --c: var(--v-ink);
+    --bg: var(--v);
+    --bd: solid 1px var(--v);
+    --f-c: var(--v);
+    --f-bg: var(--v-ink)
+  };
+  &-outline{
+    --c: var(--v);
+    --bg: transparent;
+    --bd: solid 1px currentcolor !important;
+    --f-c: var(--v-fc);
+    --f-bg: var(--v)
+  };
+  &-text{
+    --c: var(--v);
+    --bg: transparent;
+    --bd: 0;
+    --f-c: var(--v-ink);
+    --f-bg: var(--v)
+  };
+  &-corner{
+    --r: 0
+  };
+  &-round{
+    --r: 9999px
+  };
+  &[disabled],&-disabled{
+    @apply text-[--c] bg-[--bg] border-none overflow-hidden;
+    &::after{
+      @apply bg-s2/80 w-[9999px] h-[9999px] -left-1 -top-1;
+    }
+  }
+  &[loading]{
+    &::before{
+      @apply hidden;
+    }
+  }
+}
+

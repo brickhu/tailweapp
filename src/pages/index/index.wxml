@@ -13,7 +13,7 @@
     按钮文本
   </button>
   <view class="time h-[4000px]">XXXXXXX</view>
-  <mp-dialog ext-class="popup" title="ri" show="{{showRoot}}">
+  <mp-dialog ext-class="popup" title="ri" show="{{showRoot}}" buttons="{{buttons}}">
     sfdfdsdf
   </mp-dialog>
 </view>

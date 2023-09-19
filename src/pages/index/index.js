@@ -12,7 +12,11 @@ Page({
       by: 'icebreaker',
     },
     showRoot: false,
-    theme: "light"
+    theme: "light",
+    buttons:[
+      {text:'ok'},
+      {text:'no'}
+    ]
   },
   showTextMessage() {
     // Message.info({

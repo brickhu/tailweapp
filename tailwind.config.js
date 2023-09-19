@@ -3,6 +3,7 @@ module.exports = {
   presets: [
     require('./atomify/index')({
       themes: null,
+      appType: 'wx'
     }),
   ]
 }

@@ -1,0 +1,8 @@
+view.popup{
+  --bg: theme(colors.s0);
+  --text: theme(colors.ink);
+  @apply z-[9999] w-[100vw] h-[100vh] bg-ink/30 flex fixed top-0 left-0;
+  .weui-dialog{
+    @apply bg-[--bg] text-[--text] rounded-xl;
+  }
+}

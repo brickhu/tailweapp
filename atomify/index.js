@@ -1,8 +1,8 @@
 const plugin = require('tailwindcss/plugin')
 const { addDynamicIconSelectors } = require('@iconify/tailwind');
 const themeMaker = require('./theming/themes-maker')
-const components = require('./components/index.json')
-const base = require('./base/index.json')
+// const components = require('./components/index.json')
+// const base = require('./base/index.json')
 
 
 const LIGHT = {
@@ -19,10 +19,18 @@ const DARK = {
   ink: '#f3f4f6',
 }
 
+const appTypeMapping = {
+  wx: {
+    root: './weapp',
+  }
+}
 
 // 组件
 const brandPlugin = function(options){
-  const {variables} = options
+  const {variables,appType} = options
+  const {root} = appTypeMapping[appType]
+  const components = require(`${root}/components/index.json`)
+  const base = require(`${root}/base/index.json`)
   return plugin(function ({ addComponents, theme, addBase }) {
     addBase(Object.assign(base,variables))
     addComponents(components)
@@ -35,7 +43,7 @@ const brandPlugin = function(options){
 // 导出
 module.exports = (options)=>{
 
-  const { themes } = options
+  const { themes,appType } = options
   const { colors,variables} = themeMaker({themes:themes||null})
   
 
@@ -57,7 +65,7 @@ module.exports = (options)=>{
         }
       }
     },
-    plugins: [brandPlugin({variables}),addDynamicIconSelectors()]
+    plugins: [brandPlugin({variables,appType}),addDynamicIconSelectors()]
   }
 }
 
