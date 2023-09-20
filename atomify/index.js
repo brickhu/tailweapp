@@ -48,24 +48,19 @@ module.exports = (options)=>{
   
 
   return {
+    content: ['./src/**/*.{wxml,js,ts}'],
     theme: {
       extend: {
-        colors: Object.assign(colors,{
-          haha: options.haha,
-          dede: {
-            100: {
-              DEFAULT: '#dddddd',
-              on: '#000000',
-              bg: '#cccccc'
-            }
-          }
-        }),
+        colors: Object.assign(colors),
         spacing: {
           rpx: '1rpx'
         }
       }
     },
-    plugins: [brandPlugin({variables,appType}),addDynamicIconSelectors()]
+    plugins: [
+      brandPlugin({variables,appType}),
+      addDynamicIconSelectors()
+    ]
   }
 }
 
